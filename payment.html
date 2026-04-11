@@ -3,450 +3,245 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>169 DSA Questions | Crack Any Interview</title>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<title>169 DSA Questions | Get Access</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 <style>
   :root {
     --bg: #0a0a0f;
-    --bg2: #111118;
-    --bg3: #18181f;
     --card: #1c1c25;
-    --border: rgba(255,255,255,0.07);
-    --border2: rgba(255,255,255,0.12);
+    --border: rgba(255,255,255,0.08);
     --text: #f0f0f5;
     --muted: #8888a0;
     --accent: #7c6ff7;
     --accent2: #a89cf7;
     --easy: #22c55e;
-    --medium: #f59e0b;
-    --hard: #ef4444;
-    --easy-bg: rgba(34,197,94,0.1);
-    --medium-bg: rgba(245,158,11,0.1);
-    --hard-bg: rgba(239,68,68,0.1);
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Space Grotesk', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+  body {
+    font-family: 'Space Grotesk', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
 
-  .hero {
-    background: linear-gradient(135deg, #0a0a0f 0%, #12101e 50%, #0a0a0f 100%);
-    border-bottom: 1px solid var(--border);
-    padding: 52px 24px 44px;
+  .page {
+    max-width: 480px;
+    width: 100%;
     text-align: center;
-    position: relative; overflow: hidden;
   }
-  .hero::before {
-    content: '';
-    position: absolute; top: -100px; left: 50%;
-    transform: translateX(-50%);
-    width: 600px; height: 300px;
-    background: radial-gradient(ellipse, rgba(124,111,247,0.15) 0%, transparent 70%);
-    pointer-events: none;
-  }
+
   .badge {
     display: inline-block;
-    background: rgba(34,197,94,0.12);
-    border: 1px solid rgba(34,197,94,0.25);
-    color: #4ade80;
-    font-size: 12px; font-weight: 500;
-    letter-spacing: 1px; text-transform: uppercase;
-    padding: 6px 16px; border-radius: 100px; margin-bottom: 20px;
+    background: rgba(124,111,247,0.15);
+    border: 1px solid rgba(124,111,247,0.3);
+    color: var(--accent2);
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 6px 16px; border-radius: 100px; margin-bottom: 24px;
   }
+
   h1 {
-    font-size: clamp(26px, 5vw, 48px);
-    font-weight: 700; line-height: 1.15; margin-bottom: 14px;
+    font-size: clamp(28px, 5vw, 42px);
+    font-weight: 700; line-height: 1.2; margin-bottom: 12px;
     background: linear-gradient(135deg, #f0f0f5 0%, #a89cf7 100%);
     -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
   }
-  .hero-sub { color: var(--muted); font-size: 16px; max-width: 500px; margin: 0 auto 28px; line-height: 1.6; }
-  .stats-row { display: flex; gap: 28px; justify-content: center; flex-wrap: wrap; }
-  .stat { text-align: center; }
-  .stat-num { font-size: 26px; font-weight: 700; color: var(--accent2); }
-  .stat-label { font-size: 11px; color: var(--muted); margin-top: 2px; letter-spacing: 0.5px; }
 
-  .main { max-width: 860px; margin: 0 auto; padding: 36px 16px 60px; }
-
-  .section-title {
-    font-size: 11px; font-weight: 600; letter-spacing: 2px;
-    text-transform: uppercase; color: var(--muted);
-    margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid var(--border);
-    display: flex; align-items: center; justify-content: space-between;
-  }
-  .total-badge {
-    background: rgba(124,111,247,0.15); color: var(--accent2);
-    font-size: 11px; padding: 3px 10px; border-radius: 100px; font-weight: 600;
+  .sub {
+    color: var(--muted); font-size: 15px; line-height: 1.7; margin-bottom: 32px;
   }
 
-  .progress-summary {
-    background: var(--card); border: 1px solid var(--border);
-    border-radius: 14px; padding: 18px 22px; margin-bottom: 28px;
-    display: flex; gap: 20px; flex-wrap: wrap; align-items: center;
-  }
-  .prog-item { display: flex; align-items: center; gap: 8px; font-size: 13px; }
-  .prog-dot { width: 9px; height: 9px; border-radius: 50%; }
-  .prog-dot.easy { background: var(--easy); }
-  .prog-dot.medium { background: var(--medium); }
-  .prog-dot.hard { background: var(--hard); }
-
-  .topic-section { margin-bottom: 26px; }
-  .topic-header { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
-  .topic-icon { font-size: 15px; }
-  .topic-name { font-size: 14px; font-weight: 600; color: var(--text); }
-  .topic-count {
-    font-size: 11px; background: rgba(124,111,247,0.12);
-    color: var(--accent2); padding: 2px 8px; border-radius: 100px; font-weight: 500;
+  .features {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 28px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
   }
 
-  .questions-list { display: flex; flex-direction: column; gap: 4px; }
-  .question-row {
-    display: flex; align-items: center; gap: 12px;
-    padding: 11px 16px; background: var(--card);
-    border: 1px solid var(--border); border-radius: 10px;
-    text-decoration: none; color: var(--text);
-    transition: all 0.15s ease;
-  }
-  .question-row:hover { border-color: rgba(124,111,247,0.35); background: #20202c; transform: translateX(3px); }
-  .q-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--muted); min-width: 24px; }
-  .q-name { flex: 1; font-size: 14px; font-weight: 500; }
-  .q-diff { font-size: 11px; font-weight: 600; padding: 3px 9px; border-radius: 6px; }
-  .q-diff.easy { color: var(--easy); background: var(--easy-bg); }
-  .q-diff.medium { color: var(--medium); background: var(--medium-bg); }
-  .q-diff.hard { color: var(--hard); background: var(--hard-bg); }
-  .q-time { font-size: 11px; color: var(--muted); font-family: 'JetBrains Mono', monospace; min-width: 50px; text-align: right; }
-  .arrow { opacity: 0; transition: opacity 0.15s; color: var(--accent2); font-size: 14px; }
-  .question-row:hover .arrow { opacity: 1; }
-
-  .footer {
-    text-align: center; padding: 28px 24px;
-    border-top: 1px solid var(--border);
-    color: var(--muted); font-size: 12px;
+  .feat {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    color: var(--text);
   }
 
-  @media (max-width: 600px) {
-    .q-time { display: none; }
-    .stats-row { gap: 16px; }
+  .feat-icon {
+    width: 28px; height: 28px;
+    background: rgba(34,197,94,0.1);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px;
+    flex-shrink: 0;
   }
+
+  .price-box {
+    margin-bottom: 24px;
+  }
+
+  .old-price {
+    font-size: 16px;
+    color: var(--muted);
+    text-decoration: line-through;
+    margin-bottom: 4px;
+  }
+
+  .new-price {
+    font-size: 52px;
+    font-weight: 700;
+    color: var(--accent2);
+    line-height: 1;
+  }
+
+  .new-price span {
+    font-size: 24px;
+    font-weight: 500;
+    vertical-align: top;
+    margin-top: 10px;
+    display: inline-block;
+  }
+
+  .one-time {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 6px;
+  }
+
+  .pay-btn {
+    width: 100%;
+    background: var(--accent);
+    color: white;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    padding: 16px;
+    border-radius: 14px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-bottom: 14px;
+    letter-spacing: 0.3px;
+  }
+
+  .pay-btn:hover {
+    background: #6a5ef0;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 36px rgba(124,111,247,0.4);
+  }
+
+  .pay-btn:active { transform: translateY(0); }
+
+  .secure {
+    font-size: 12px;
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+
+  .stats {
+    display: flex;
+    gap: 0;
+    margin-bottom: 32px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+  }
+
+  .stat {
+    flex: 1;
+    padding: 16px 8px;
+    text-align: center;
+    border-right: 1px solid var(--border);
+  }
+  .stat:last-child { border-right: none; }
+  .stat-num { font-size: 22px; font-weight: 700; color: var(--accent2); }
+  .stat-label { font-size: 11px; color: var(--muted); margin-top: 2px; }
 </style>
 </head>
 <body>
 
-<div class="hero">
-  <div class="badge">✅ Access Unlocked — Interview Prep 2025</div>
-  <h1>169 DSA Questions.<br>Every Company. One List.</h1>
-  <p class="hero-sub">Click any question to open directly on LeetCode and start solving!</p>
-  <div class="stats-row">
+<div class="page">
+  <div class="badge">🔥 Interview Prep 2025</div>
+
+  <h1>169 DSA Questions.<br>Crack Any Interview.</h1>
+
+  <p class="sub">Hand-picked questions asked in Google, Amazon, Microsoft & more. Stop wasting time on 2000+ questions!</p>
+
+  <div class="stats">
     <div class="stat"><div class="stat-num">169</div><div class="stat-label">Questions</div></div>
     <div class="stat"><div class="stat-num">18</div><div class="stat-label">Topics</div></div>
-    <div class="stat"><div class="stat-num">28</div><div class="stat-label">Week Plan</div></div>
-    <div class="stat"><div class="stat-num">∞</div><div class="stat-label">Companies</div></div>
+    <div class="stat"><div class="stat-num">28</div><div class="stat-label">Weeks</div></div>
+  </div>
+
+  <div class="features">
+    <div class="feat"><div class="feat-icon">✅</div> 169 most asked LeetCode questions</div>
+    <div class="feat"><div class="feat-icon">📂</div> Topic-wise organized (Array, Graph, DP...)</div>
+    <div class="feat"><div class="feat-icon">🎯</div> Easy / Medium / Hard tags</div>
+    <div class="feat"><div class="feat-icon">🔗</div> Direct LeetCode links — click & solve</div>
+    <div class="feat"><div class="feat-icon">♾️</div> Lifetime access — one time payment</div>
+  </div>
+
+  <div class="price-box">
+    <div class="old-price">₹199</div>
+    <div class="new-price"><span>₹</span>19</div>
+    <div class="one-time">One-time payment · Instant access</div>
+  </div>
+
+  <button class="pay-btn" onclick="startPayment()">
+    💳 Pay ₹19 — Get Instant Access
+  </button>
+
+  <div class="secure">
+    🔒 Secure payment via Razorpay · UPI / Card / Net Banking
   </div>
 </div>
 
-<div class="main">
-  <div class="section-title">
-    All Questions — Click to Open on LeetCode
-    <span class="total-badge">169 Total</span>
-  </div>
+<script>
+function startPayment() {
+  var options = {
+    // ⚠️ APNI NAYI KEY YAHAN DAALO
+    key: "rzp_test_ScBxlWxBBbkS1d",
+    amount: 1900, // 19 rupees = 1900 paise
+    currency: "INR",
+    name: "DSA Interview Prep",
+    description: "169 Most Asked DSA Questions",
+    image: "",
+    handler: function(response) {
+      // Payment successful — questions page pe redirect!
+      window.location.href = "index.html";
+    },
+    prefill: {
+      name: "",
+      email: "",
+      contact: ""
+    },
+    theme: {
+      color: "#7c6ff7"
+    },
+    modal: {
+      ondismiss: function() {
+        console.log("Payment cancelled");
+      }
+    }
+  };
 
-  <div class="progress-summary">
-    <div class="prog-item"><div class="prog-dot easy"></div> Easy: 63</div>
-    <div class="prog-item"><div class="prog-dot medium"></div> Medium: 90</div>
-    <div class="prog-item"><div class="prog-dot hard"></div> Hard: 16</div>
-    <div style="margin-left:auto; font-size:12px; color:var(--muted);">Source: Grind 169 · TechInterviewHandbook</div>
-  </div>
-
-  <!-- ARRAY -->
-  <div class="topic-section">
-    <div class="topic-header"><span class="topic-icon">📦</span><span class="topic-name">Array</span><span class="topic-count">24</span></div>
-    <div class="questions-list">
-      <a class="question-row" href="https://leetcode.com/problems/two-sum" target="_blank"><span class="q-num">1</span><span class="q-name">Two Sum</span><span class="q-diff easy">Easy</span><span class="q-time">15 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock" target="_blank"><span class="q-num">2</span><span class="q-name">Best Time to Buy and Sell Stock</span><span class="q-diff easy">Easy</span><span class="q-time">20 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/insert-interval" target="_blank"><span class="q-num">3</span><span class="q-name">Insert Interval</span><span class="q-diff medium">Medium</span><span class="q-time">25 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/3sum" target="_blank"><span class="q-num">4</span><span class="q-name">3Sum</span><span class="q-diff medium">Medium</span><span class="q-time">30 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/product-of-array-except-self" target="_blank"><span class="q-num">5</span><span class="q-name">Product of Array Except Self</span><span class="q-diff medium">Medium</span><span class="q-time">30 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/combination-sum" target="_blank"><span class="q-num">6</span><span class="q-name">Combination Sum</span><span class="q-diff medium">Medium</span><span class="q-time">30 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/merge-intervals" target="_blank"><span class="q-num">7</span><span class="q-name">Merge Intervals</span><span class="q-diff medium">Medium</span><span class="q-time">30 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/majority-element" target="_blank"><span class="q-num">8</span><span class="q-name">Majority Element</span><span class="q-diff easy">Easy</span><span class="q-time">20 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/sort-colors" target="_blank"><span class="q-num">9</span><span class="q-name">Sort Colors</span><span class="q-diff medium">Medium</span><span class="q-time">25 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/contains-duplicate" target="_blank"><span class="q-num">10</span><span class="q-name">Contains Duplicate</span><span class="q-diff easy">Easy</span><span class="q-time">15 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/container-with-most-water" target="_blank"><span class="q-num">11</span><span class="q-name">Container With Most Water</span><span class="q-diff medium">Medium</span><span class="q-time">35 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/meeting-rooms" target="_blank"><span class="q-num">12</span><span class="q-name">Meeting Rooms</span><span class="q-diff easy">Easy</span><span class="q-time">20 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/gas-station" target="_blank"><span class="q-num">13</span><span class="q-name">Gas Station</span><span class="q-diff medium">Medium</span><span class="q-time">30 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/longest-consecutive-sequence" target="_blank"><span class="q-num">14</span><span class="q-name">Longest Consecutive Sequence</span><span class="q-diff medium">Medium</span><span class="q-time">30 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/rotate-array" target="_blank"><span class="q-num">15</span><span class="q-name">Rotate Array</span><span class="q-diff medium">Medium</span><span class="q-time">25 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/contiguous-array" target="_blank"><span class="q-num">16</span><span class="q-name">Contiguous Array</span><span class="q-diff medium">Medium</span><span class="q-time">30 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/subarray-sum-equals-k" target="_blank"><span class="q-num">17</span><span class="q-name">Subarray Sum Equals K</span><span class="q-diff medium">Medium</span><span class="q-time">30 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/employee-free-time" target="_blank"><span class="q-num">18</span><span class="q-name">Employee Free Time</span><span class="q-diff hard">Hard</span><span class="q-time">45 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/move-zeroes" target="_blank"><span class="q-num">19</span><span class="q-name">Move Zeroes</span><span class="q-diff easy">Easy</span><span class="q-time">20 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/meeting-rooms-ii" target="_blank"><span class="q-num">20</span><span class="q-name">Meeting Rooms II</span><span class="q-diff medium">Medium</span><span class="q-time">30 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/sliding-window-maximum" target="_blank"><span class="q-num">21</span><span class="q-name">Sliding Window Maximum</span><span class="q-diff hard">Hard</span><span class="q-time">40 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/squares-of-a-sorted-array" target="_blank"><span class="q-num">22</span><span class="q-name">Squares of a Sorted Array</span><span class="q-diff easy">Easy</span><span class="q-time">20 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/3sum-closest" target="_blank"><span class="q-num">23</span><span class="q-name">3Sum Closest</span><span class="q-diff medium">Medium</span><span class="q-time">30 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/non-overlapping-intervals" target="_blank"><span class="q-num">24</span><span class="q-name">Non-overlapping Intervals</span><span class="q-diff medium">Medium</span><span class="q-time">30 min</span><span class="arrow">↗</span></a>
-    </div>
-  </div>
-
-  <!-- STRING -->
-  <div class="topic-section">
-    <div class="topic-header"><span class="topic-icon">🔤</span><span class="topic-name">String</span><span class="topic-count">14</span></div>
-    <div class="questions-list">
-      <a class="question-row" href="https://leetcode.com/problems/valid-palindrome" target="_blank"><span class="q-num">1</span><span class="q-name">Valid Palindrome</span><span class="q-diff easy">Easy</span><span class="q-time">15 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/valid-anagram" target="_blank"><span class="q-num">2</span><span class="q-name">Valid Anagram</span><span class="q-diff easy">Easy</span><span class="q-time">15 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/longest-substring-without-repeating-characters" target="_blank"><span class="q-num">3</span><span class="q-name">Longest Substring Without Repeating Characters</span><span class="q-diff medium">Medium</span><span class="q-time">30 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/longest-palindrome" target="_blank"><span class="q-num">4</span><span class="q-name">Longest Palindrome</span><span class="q-diff easy">Easy</span><span class="q-time">20 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/minimum-window-substring" target="_blank"><span class="q-num">5</span><span class="q-name">Minimum Window Substring</span><span class="q-diff hard">Hard</span><span class="q-time">30 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/string-to-integer-atoi" target="_blank"><span class="q-num">6</span><span class="q-name">String to Integer (atoi)</span><span class="q-diff medium">Medium</span><span class="q-time">25 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/longest-palindromic-substring" target="_blank"><span class="q-num">7</span><span class="q-name">Longest Palindromic Substring</span><span class="q-diff medium">Medium</span><span class="q-time">25 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/find-all-anagrams-in-a-string" target="_blank"><span class="q-num">8</span><span class="q-name">Find All Anagrams in a String</span><span class="q-diff medium">Medium</span><span class="q-time">30 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/group-anagrams" target="_blank"><span class="q-num">9</span><span class="q-name">Group Anagrams</span><span class="q-diff medium">Medium</span><span class="q-time">30 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/longest-repeating-character-replacement" target="_blank"><span class="q-num">10</span><span class="q-name">Longest Repeating Character Replacement</span><span class="q-diff medium">Medium</span><span class="q-time">30 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/longest-common-prefix" target="_blank"><span class="q-num">11</span><span class="q-name">Longest Common Prefix</span><span class="q-diff easy">Easy</span><span class="q-time">20 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/largest-number" target="_blank"><span class="q-num">12</span><span class="q-name">Largest Number</span><span class="q-diff medium">Medium</span><span class="q-time">25 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/encode-and-decode-strings" target="_blank"><span class="q-num">13</span><span class="q-name">Encode and Decode Strings</span><span class="q-diff medium">Medium</span><span class="q-time">25 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/palindrome-pairs" target="_blank"><span class="q-num">14</span><span class="q-name">Palindrome Pairs</span><span class="q-diff hard">Hard</span><span class="q-time">40 min</span><span class="arrow">↗</span></a>
-    </div>
-  </div>
-
-  <!-- LINKED LIST -->
-  <div class="topic-section">
-    <div class="topic-header"><span class="topic-icon">🔗</span><span class="topic-name">Linked List</span><span class="topic-count">14</span></div>
-    <div class="questions-list">
-      <a class="question-row" href="https://leetcode.com/problems/merge-two-sorted-lists" target="_blank"><span class="q-num">1</span><span class="q-name">Merge Two Sorted Lists</span><span class="q-diff easy">Easy</span><span class="q-time">20 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/linked-list-cycle" target="_blank"><span class="q-num">2</span><span class="q-name">Linked List Cycle</span><span class="q-diff easy">Easy</span><span class="q-time">20 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/reverse-linked-list" target="_blank"><span class="q-num">3</span><span class="q-name">Reverse Linked List</span><span class="q-diff easy">Easy</span><span class="q-time">20 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/middle-of-the-linked-list" target="_blank"><span class="q-num">4</span><span class="q-name">Middle of the Linked List</span><span class="q-diff easy">Easy</span><span class="q-time">20 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/lru-cache" target="_blank"><span class="q-num">5</span><span class="q-name">LRU Cache</span><span class="q-diff medium">Medium</span><span class="q-time">30 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/remove-nth-node-from-end-of-list" target="_blank"><span class="q-num">6</span><span class="q-name">Remove Nth Node From End of List</span><span class="q-diff medium">Medium</span><span class="q-time">25 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/swap-nodes-in-pairs" target="_blank"><span class="q-num">7</span><span class="q-name">Swap Nodes in Pairs</span><span class="q-diff medium">Medium</span><span class="q-time">25 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/odd-even-linked-list" target="_blank"><span class="q-num">8</span><span class="q-name">Odd Even Linked List</span><span class="q-diff medium">Medium</span><span class="q-time">25 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/add-two-numbers" target="_blank"><span class="q-num">9</span><span class="q-name">Add Two Numbers</span><span class="q-diff medium">Medium</span><span class="q-time">30 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/sort-list" target="_blank"><span class="q-num">10</span><span class="q-name">Sort List</span><span class="q-diff medium">Medium</span><span class="q-time">30 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/palindrome-linked-list" target="_blank"><span class="q-num">11</span><span class="q-name">Palindrome Linked List</span><span class="q-diff easy">Easy</span><span class="q-time">20 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/reorder-list" target="_blank"><span class="q-num">12</span><span class="q-name">Reorder List</span><span class="q-diff medium">Medium</span><span class="q-time">30 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/rotate-list" target="_blank"><span class="q-num">13</span><span class="q-name">Rotate List</span><span class="q-diff medium">Medium</span><span class="q-time">25 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/reverse-nodes-in-k-group" target="_blank"><span class="q-num">14</span><span class="q-name">Reverse Nodes in k-Group</span><span class="q-diff hard">Hard</span><span class="q-time">40 min</span><span class="arrow">↗</span></a>
-    </div>
-  </div>
-
-  <!-- STACK -->
-  <div class="topic-section">
-    <div class="topic-header"><span class="topic-icon">🥞</span><span class="topic-name">Stack</span><span class="topic-count">14</span></div>
-    <div class="questions-list">
-      <a class="question-row" href="https://leetcode.com/problems/valid-parentheses" target="_blank"><span class="q-num">1</span><span class="q-name">Valid Parentheses</span><span class="q-diff easy">Easy</span><span class="q-time">20 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/implement-queue-using-stacks" target="_blank"><span class="q-num">2</span><span class="q-name">Implement Queue using Stacks</span><span class="q-diff easy">Easy</span><span class="q-time">20 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/evaluate-reverse-polish-notation" target="_blank"><span class="q-num">3</span><span class="q-name">Evaluate Reverse Polish Notation</span><span class="q-diff medium">Medium</span><span class="q-time">30 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/min-stack" target="_blank"><span class="q-num">4</span><span class="q-name">Min Stack</span><span class="q-diff medium">Medium</span><span class="q-time">20 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/trapping-rain-water" target="_blank"><span class="q-num">5</span><span class="q-name">Trapping Rain Water</span><span class="q-diff hard">Hard</span><span class="q-time">35 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/basic-calculator" target="_blank"><span class="q-num">6</span><span class="q-name">Basic Calculator</span><span class="q-diff hard">Hard</span><span class="q-time">40 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/largest-rectangle-in-histogram" target="_blank"><span class="q-num">7</span><span class="q-name">Largest Rectangle in Histogram</span><span class="q-diff hard">Hard</span><span class="q-time">35 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/daily-temperatures" target="_blank"><span class="q-num">8</span><span class="q-name">Daily Temperatures</span><span class="q-diff medium">Medium</span><span class="q-time">30 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/backspace-string-compare" target="_blank"><span class="q-num">9</span><span class="q-name">Backspace String Compare</span><span class="q-diff easy">Easy</span><span class="q-time">20 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/maximum-frequency-stack" target="_blank"><span class="q-num">10</span><span class="q-name">Maximum Frequency Stack</span><span class="q-diff hard">Hard</span><span class="q-time">40 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/decode-string" target="_blank"><span class="q-num">11</span><span class="q-name">Decode String</span><span class="q-diff medium">Medium</span><span class="q-time">30 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/asteroid-collision" target="_blank"><span class="q-num">12</span><span class="q-name">Asteroid Collision</span><span class="q-diff medium">Medium</span><span class="q-time">25 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/longest-valid-parentheses" target="_blank"><span class="q-num">13</span><span class="q-name">Longest Valid Parentheses</span><span class="q-diff hard">Hard</span><span class="q-time">40 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/basic-calculator-ii" target="_blank"><span class="q-num">14</span><span class="q-name">Basic Calculator II</span><span class="q-diff medium">Medium</span><span class="q-time">35 min</span><span class="arrow">↗</span></a>
-    </div>
-  </div>
-
-  <!-- GRAPH -->
-  <div class="topic-section">
-    <div class="topic-header"><span class="topic-icon">🕸️</span><span class="topic-name">Graph</span><span class="topic-count">21</span></div>
-    <div class="questions-list">
-      <a class="question-row" href="https://leetcode.com/problems/flood-fill" target="_blank"><span class="q-num">1</span><span class="q-name">Flood Fill</span><span class="q-diff easy">Easy</span><span class="q-time">20 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/01-matrix" target="_blank"><span class="q-num">2</span><span class="q-name">01 Matrix</span><span class="q-diff medium">Medium</span><span class="q-time">30 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/clone-graph" target="_blank"><span class="q-num">3</span><span class="q-name">Clone Graph</span><span class="q-diff medium">Medium</span><span class="q-time">25 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/course-schedule" target="_blank"><span class="q-num">4</span><span class="q-name">Course Schedule</span><span class="q-diff medium">Medium</span><span class="q-time">30 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/number-of-islands" target="_blank"><span class="q-num">5</span><span class="q-name">Number of Islands</span><span class="q-diff medium">Medium</span><span class="q-time">25 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/rotting-oranges" target="_blank"><span class="q-num">6</span><span class="q-name">Rotting Oranges</span><span class="q-diff medium">Medium</span><span class="q-time">30 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/accounts-merge" target="_blank"><span class="q-num">7</span><span class="q-name">Accounts Merge</span><span class="q-diff medium">Medium</span><span class="q-time">30 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/word-ladder" target="_blank"><span class="q-num">8</span><span class="q-name">Word Ladder</span><span class="q-diff hard">Hard</span><span class="q-time">45 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/word-search" target="_blank"><span class="q-num">9</span><span class="q-name">Word Search</span><span class="q-diff medium">Medium</span><span class="q-time">30 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/minimum-height-trees" target="_blank"><span class="q-num">10</span><span class="q-name">Minimum Height Trees</span><span class="q-diff medium">Medium</span><span class="q-time">30 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/pacific-atlantic-water-flow" target="_blank"><span class="q-num">11</span><span class="q-name">Pacific Atlantic Water Flow</span><span class="q-diff medium">Medium</span><span class="q-time">30 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/shortest-path-to-get-food" target="_blank"><span class="q-num">12</span><span class="q-name">Shortest Path to Get Food</span><span class="q-diff medium">Medium</span><span class="q-time">30 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/graph-valid-tree" target="_blank"><span class="q-num">13</span><span class="q-name">Graph Valid Tree</span><span class="q-diff medium">Medium</span><span class="q-time">30 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/course-schedule-ii" target="_blank"><span class="q-num">14</span><span class="q-name">Course Schedule II</span><span class="q-diff medium">Medium</span><span class="q-time">30 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph" target="_blank"><span class="q-num">15</span><span class="q-name">Number of Connected Components</span><span class="q-diff medium">Medium</span><span class="q-time">30 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/minimum-knight-moves" target="_blank"><span class="q-num">16</span><span class="q-name">Minimum Knight Moves</span><span class="q-diff medium">Medium</span><span class="q-time">30 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/longest-increasing-path-in-a-matrix" target="_blank"><span class="q-num">17</span><span class="q-name">Longest Increasing Path in a Matrix</span><span class="q-diff hard">Hard</span><span class="q-time">40 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/word-search-ii" target="_blank"><span class="q-num">18</span><span class="q-name">Word Search II</span><span class="q-diff hard">Hard</span><span class="q-time">45 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/alien-dictionary" target="_blank"><span class="q-num">19</span><span class="q-name">Alien Dictionary</span><span class="q-diff hard">Hard</span><span class="q-time">45 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/bus-routes" target="_blank"><span class="q-num">20</span><span class="q-name">Bus Routes</span><span class="q-diff hard">Hard</span><span class="q-time">40 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/cheapest-flights-within-k-stops" target="_blank"><span class="q-num">21</span><span class="q-name">Cheapest Flights Within K Stops</span><span class="q-diff medium">Medium</span><span class="q-time">35 min</span><span class="arrow">↗</span></a>
-    </div>
-  </div>
-
-  <!-- BINARY TREE -->
-  <div class="topic-section">
-    <div class="topic-header"><span class="topic-icon">🌳</span><span class="topic-name">Binary Tree</span><span class="topic-count">18</span></div>
-    <div class="questions-list">
-      <a class="question-row" href="https://leetcode.com/problems/invert-binary-tree" target="_blank"><span class="q-num">1</span><span class="q-name">Invert Binary Tree</span><span class="q-diff easy">Easy</span><span class="q-time">15 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/balanced-binary-tree" target="_blank"><span class="q-num">2</span><span class="q-name">Balanced Binary Tree</span><span class="q-diff easy">Easy</span><span class="q-time">15 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/binary-tree-level-order-traversal" target="_blank"><span class="q-num">3</span><span class="q-name">Binary Tree Level Order Traversal</span><span class="q-diff medium">Medium</span><span class="q-time">20 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree" target="_blank"><span class="q-num">4</span><span class="q-name">Lowest Common Ancestor of a Binary Tree</span><span class="q-diff medium">Medium</span><span class="q-time">25 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/serialize-and-deserialize-binary-tree" target="_blank"><span class="q-num">5</span><span class="q-name">Serialize and Deserialize Binary Tree</span><span class="q-diff hard">Hard</span><span class="q-time">40 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/diameter-of-binary-tree" target="_blank"><span class="q-num">6</span><span class="q-name">Diameter of Binary Tree</span><span class="q-diff easy">Easy</span><span class="q-time">30 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/binary-tree-right-side-view" target="_blank"><span class="q-num">7</span><span class="q-name">Binary Tree Right Side View</span><span class="q-diff medium">Medium</span><span class="q-time">20 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/maximum-depth-of-binary-tree" target="_blank"><span class="q-num">8</span><span class="q-name">Maximum Depth of Binary Tree</span><span class="q-diff easy">Easy</span><span class="q-time">15 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal" target="_blank"><span class="q-num">9</span><span class="q-name">Construct Binary Tree from Preorder and Inorder</span><span class="q-diff medium">Medium</span><span class="q-time">25 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/binary-tree-maximum-path-sum" target="_blank"><span class="q-num">10</span><span class="q-name">Binary Tree Maximum Path Sum</span><span class="q-diff hard">Hard</span><span class="q-time">40 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/path-sum-ii" target="_blank"><span class="q-num">11</span><span class="q-name">Path Sum II</span><span class="q-diff medium">Medium</span><span class="q-time">25 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/maximum-width-of-binary-tree" target="_blank"><span class="q-num">12</span><span class="q-name">Maximum Width of Binary Tree</span><span class="q-diff medium">Medium</span><span class="q-time">30 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/same-tree" target="_blank"><span class="q-num">13</span><span class="q-name">Same Tree</span><span class="q-diff easy">Easy</span><span class="q-time">15 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal" target="_blank"><span class="q-num">14</span><span class="q-name">Binary Tree Zigzag Level Order Traversal</span><span class="q-diff medium">Medium</span><span class="q-time">25 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/path-sum-iii" target="_blank"><span class="q-num">15</span><span class="q-name">Path Sum III</span><span class="q-diff medium">Medium</span><span class="q-time">25 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/symmetric-tree" target="_blank"><span class="q-num">16</span><span class="q-name">Symmetric Tree</span><span class="q-diff easy">Easy</span><span class="q-time">15 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/all-nodes-distance-k-in-binary-tree" target="_blank"><span class="q-num">17</span><span class="q-name">All Nodes Distance K in Binary Tree</span><span class="q-diff medium">Medium</span><span class="q-time">30 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/subtree-of-another-tree" target="_blank"><span class="q-num">18</span><span class="q-name">Subtree of Another Tree</span><span class="q-diff easy">Easy</span><span class="q-time">20 min</span><span class="arrow">↗</span></a>
-    </div>
-  </div>
-
-  <!-- DYNAMIC PROGRAMMING -->
-  <div class="topic-section">
-    <div class="topic-header"><span class="topic-icon">⚡</span><span class="topic-name">Dynamic Programming</span><span class="topic-count">12</span></div>
-    <div class="questions-list">
-      <a class="question-row" href="https://leetcode.com/problems/maximum-subarray" target="_blank"><span class="q-num">1</span><span class="q-name">Maximum Subarray</span><span class="q-diff medium">Medium</span><span class="q-time">20 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/coin-change" target="_blank"><span class="q-num">2</span><span class="q-name">Coin Change</span><span class="q-diff medium">Medium</span><span class="q-time">25 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/climbing-stairs" target="_blank"><span class="q-num">3</span><span class="q-name">Climbing Stairs</span><span class="q-diff easy">Easy</span><span class="q-time">20 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/partition-equal-subset-sum" target="_blank"><span class="q-num">4</span><span class="q-name">Partition Equal Subset Sum</span><span class="q-diff medium">Medium</span><span class="q-time">30 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/unique-paths" target="_blank"><span class="q-num">5</span><span class="q-name">Unique Paths</span><span class="q-diff medium">Medium</span><span class="q-time">20 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/house-robber" target="_blank"><span class="q-num">6</span><span class="q-name">House Robber</span><span class="q-diff medium">Medium</span><span class="q-time">25 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/maximum-product-subarray" target="_blank"><span class="q-num">7</span><span class="q-name">Maximum Product Subarray</span><span class="q-diff medium">Medium</span><span class="q-time">25 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/longest-increasing-subsequence" target="_blank"><span class="q-num">8</span><span class="q-name">Longest Increasing Subsequence</span><span class="q-diff medium">Medium</span><span class="q-time">30 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/jump-game" target="_blank"><span class="q-num">9</span><span class="q-name">Jump Game</span><span class="q-diff medium">Medium</span><span class="q-time">25 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/maximal-square" target="_blank"><span class="q-num">10</span><span class="q-name">Maximal Square</span><span class="q-diff medium">Medium</span><span class="q-time">30 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/decode-ways" target="_blank"><span class="q-num">11</span><span class="q-name">Decode Ways</span><span class="q-diff medium">Medium</span><span class="q-time">30 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/combination-sum-iv" target="_blank"><span class="q-num">12</span><span class="q-name">Combination Sum IV</span><span class="q-diff medium">Medium</span><span class="q-time">30 min</span><span class="arrow">↗</span></a>
-    </div>
-  </div>
-
-  <!-- BINARY SEARCH -->
-  <div class="topic-section">
-    <div class="topic-header"><span class="topic-icon">🔍</span><span class="topic-name">Binary Search</span><span class="topic-count">8</span></div>
-    <div class="questions-list">
-      <a class="question-row" href="https://leetcode.com/problems/binary-search" target="_blank"><span class="q-num">1</span><span class="q-name">Binary Search</span><span class="q-diff easy">Easy</span><span class="q-time">15 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/first-bad-version" target="_blank"><span class="q-num">2</span><span class="q-name">First Bad Version</span><span class="q-diff easy">Easy</span><span class="q-time">20 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/search-in-rotated-sorted-array" target="_blank"><span class="q-num">3</span><span class="q-name">Search in Rotated Sorted Array</span><span class="q-diff medium">Medium</span><span class="q-time">30 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/time-based-key-value-store" target="_blank"><span class="q-num">4</span><span class="q-name">Time Based Key-Value Store</span><span class="q-diff medium">Medium</span><span class="q-time">35 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/maximum-profit-in-job-scheduling" target="_blank"><span class="q-num">5</span><span class="q-name">Maximum Profit in Job Scheduling</span><span class="q-diff hard">Hard</span><span class="q-time">45 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/median-of-two-sorted-arrays" target="_blank"><span class="q-num">6</span><span class="q-name">Median of Two Sorted Arrays</span><span class="q-diff hard">Hard</span><span class="q-time">40 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/search-a-2d-matrix" target="_blank"><span class="q-num">7</span><span class="q-name">Search a 2D Matrix</span><span class="q-diff medium">Medium</span><span class="q-time">25 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/find-minimum-in-rotated-sorted-array" target="_blank"><span class="q-num">8</span><span class="q-name">Find Minimum in Rotated Sorted Array</span><span class="q-diff medium">Medium</span><span class="q-time">25 min</span><span class="arrow">↗</span></a>
-    </div>
-  </div>
-
-  <!-- HEAP -->
-  <div class="topic-section">
-    <div class="topic-header"><span class="topic-icon">🏔️</span><span class="topic-name">Heap</span><span class="topic-count">8</span></div>
-    <div class="questions-list">
-      <a class="question-row" href="https://leetcode.com/problems/k-closest-points-to-origin" target="_blank"><span class="q-num">1</span><span class="q-name">K Closest Points to Origin</span><span class="q-diff medium">Medium</span><span class="q-time">30 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/find-median-from-data-stream" target="_blank"><span class="q-num">2</span><span class="q-name">Find Median from Data Stream</span><span class="q-diff hard">Hard</span><span class="q-time">30 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/merge-k-sorted-lists" target="_blank"><span class="q-num">3</span><span class="q-name">Merge k Sorted Lists</span><span class="q-diff hard">Hard</span><span class="q-time">30 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/task-scheduler" target="_blank"><span class="q-num">4</span><span class="q-name">Task Scheduler</span><span class="q-diff medium">Medium</span><span class="q-time">35 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/top-k-frequent-words" target="_blank"><span class="q-num">5</span><span class="q-name">Top K Frequent Words</span><span class="q-diff medium">Medium</span><span class="q-time">25 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/find-k-closest-elements" target="_blank"><span class="q-num">6</span><span class="q-name">Find K Closest Elements</span><span class="q-diff medium">Medium</span><span class="q-time">30 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/kth-largest-element-in-an-array" target="_blank"><span class="q-num">7</span><span class="q-name">Kth Largest Element in an Array</span><span class="q-diff medium">Medium</span><span class="q-time">25 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/smallest-range-covering-elements-from-k-lists" target="_blank"><span class="q-num">8</span><span class="q-name">Smallest Range Covering Elements from K Lists</span><span class="q-diff hard">Hard</span><span class="q-time">45 min</span><span class="arrow">↗</span></a>
-    </div>
-  </div>
-
-  <!-- BINARY SEARCH TREE -->
-  <div class="topic-section">
-    <div class="topic-header"><span class="topic-icon">🌲</span><span class="topic-name">Binary Search Tree</span><span class="topic-count">5</span></div>
-    <div class="questions-list">
-      <a class="question-row" href="https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree" target="_blank"><span class="q-num">1</span><span class="q-name">Lowest Common Ancestor of a BST</span><span class="q-diff easy">Easy</span><span class="q-time">20 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/validate-binary-search-tree" target="_blank"><span class="q-num">2</span><span class="q-name">Validate Binary Search Tree</span><span class="q-diff medium">Medium</span><span class="q-time">20 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/kth-smallest-element-in-a-bst" target="_blank"><span class="q-num">3</span><span class="q-name">Kth Smallest Element in a BST</span><span class="q-diff medium">Medium</span><span class="q-time">25 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/inorder-successor-in-bst" target="_blank"><span class="q-num">4</span><span class="q-name">Inorder Successor in BST</span><span class="q-diff medium">Medium</span><span class="q-time">25 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree" target="_blank"><span class="q-num">5</span><span class="q-name">Convert Sorted Array to BST</span><span class="q-diff easy">Easy</span><span class="q-time">20 min</span><span class="arrow">↗</span></a>
-    </div>
-  </div>
-
-  <!-- TRIE -->
-  <div class="topic-section">
-    <div class="topic-header"><span class="topic-icon">🌿</span><span class="topic-name">Trie</span><span class="topic-count">4</span></div>
-    <div class="questions-list">
-      <a class="question-row" href="https://leetcode.com/problems/implement-trie-prefix-tree" target="_blank"><span class="q-num">1</span><span class="q-name">Implement Trie (Prefix Tree)</span><span class="q-diff medium">Medium</span><span class="q-time">35 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/word-break" target="_blank"><span class="q-num">2</span><span class="q-name">Word Break</span><span class="q-diff medium">Medium</span><span class="q-time">30 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/design-add-and-search-words-data-structure" target="_blank"><span class="q-num">3</span><span class="q-name">Design Add and Search Words Data Structure</span><span class="q-diff medium">Medium</span><span class="q-time">30 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/design-in-memory-file-system" target="_blank"><span class="q-num">4</span><span class="q-name">Design In-Memory File System</span><span class="q-diff hard">Hard</span><span class="q-time">45 min</span><span class="arrow">↗</span></a>
-    </div>
-  </div>
-
-  <!-- RECURSION -->
-  <div class="topic-section">
-    <div class="topic-header"><span class="topic-icon">🔄</span><span class="topic-name">Recursion</span><span class="topic-count">6</span></div>
-    <div class="questions-list">
-      <a class="question-row" href="https://leetcode.com/problems/permutations" target="_blank"><span class="q-num">1</span><span class="q-name">Permutations</span><span class="q-diff medium">Medium</span><span class="q-time">30 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/subsets" target="_blank"><span class="q-num">2</span><span class="q-name">Subsets</span><span class="q-diff medium">Medium</span><span class="q-time">30 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/letter-combinations-of-a-phone-number" target="_blank"><span class="q-num">3</span><span class="q-name">Letter Combinations of a Phone Number</span><span class="q-diff medium">Medium</span><span class="q-time">30 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/next-permutation" target="_blank"><span class="q-num">4</span><span class="q-name">Next Permutation</span><span class="q-diff medium">Medium</span><span class="q-time">30 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/generate-parentheses" target="_blank"><span class="q-num">5</span><span class="q-name">Generate Parentheses</span><span class="q-diff medium">Medium</span><span class="q-time">30 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/n-queens" target="_blank"><span class="q-num">6</span><span class="q-name">N-Queens</span><span class="q-diff hard">Hard</span><span class="q-time">40 min</span><span class="arrow">↗</span></a>
-    </div>
-  </div>
-
-  <!-- MATRIX -->
-  <div class="topic-section">
-    <div class="topic-header"><span class="topic-icon">🔢</span><span class="topic-name">Matrix</span><span class="topic-count">5</span></div>
-    <div class="questions-list">
-      <a class="question-row" href="https://leetcode.com/problems/spiral-matrix" target="_blank"><span class="q-num">1</span><span class="q-name">Spiral Matrix</span><span class="q-diff medium">Medium</span><span class="q-time">25 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/valid-sudoku" target="_blank"><span class="q-num">2</span><span class="q-name">Valid Sudoku</span><span class="q-diff medium">Medium</span><span class="q-time">30 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/rotate-image" target="_blank"><span class="q-num">3</span><span class="q-name">Rotate Image</span><span class="q-diff medium">Medium</span><span class="q-time">25 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/set-matrix-zeroes" target="_blank"><span class="q-num">4</span><span class="q-name">Set Matrix Zeroes</span><span class="q-diff medium">Medium</span><span class="q-time">25 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/sudoku-solver" target="_blank"><span class="q-num">5</span><span class="q-name">Sudoku Solver</span><span class="q-diff hard">Hard</span><span class="q-time">45 min</span><span class="arrow">↗</span></a>
-    </div>
-  </div>
-
-  <!-- BINARY -->
-  <div class="topic-section">
-    <div class="topic-header"><span class="topic-icon">💻</span><span class="topic-name">Binary / Bit Manipulation</span><span class="topic-count">7</span></div>
-    <div class="questions-list">
-      <a class="question-row" href="https://leetcode.com/problems/add-binary" target="_blank"><span class="q-num">1</span><span class="q-name">Add Binary</span><span class="q-diff easy">Easy</span><span class="q-time">15 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/find-the-duplicate-number" target="_blank"><span class="q-num">2</span><span class="q-name">Find the Duplicate Number</span><span class="q-diff medium">Medium</span><span class="q-time">30 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/counting-bits" target="_blank"><span class="q-num">3</span><span class="q-name">Counting Bits</span><span class="q-diff easy">Easy</span><span class="q-time">15 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/number-of-1-bits" target="_blank"><span class="q-num">4</span><span class="q-name">Number of 1 Bits</span><span class="q-diff easy">Easy</span><span class="q-time">15 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/single-number" target="_blank"><span class="q-num">5</span><span class="q-name">Single Number</span><span class="q-diff easy">Easy</span><span class="q-time">15 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/missing-number" target="_blank"><span class="q-num">6</span><span class="q-name">Missing Number</span><span class="q-diff easy">Easy</span><span class="q-time">15 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/reverse-bits" target="_blank"><span class="q-num">7</span><span class="q-name">Reverse Bits</span><span class="q-diff easy">Easy</span><span class="q-time">15 min</span><span class="arrow">↗</span></a>
-    </div>
-  </div>
-
-  <!-- HASH TABLE -->
-  <div class="topic-section">
-    <div class="topic-header"><span class="topic-icon">#️⃣</span><span class="topic-name">Hash Table</span><span class="topic-count">3</span></div>
-    <div class="questions-list">
-      <a class="question-row" href="https://leetcode.com/problems/ransom-note" target="_blank"><span class="q-num">1</span><span class="q-name">Ransom Note</span><span class="q-diff easy">Easy</span><span class="q-time">15 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/insert-delete-getrandom-o1" target="_blank"><span class="q-num">2</span><span class="q-name">Insert Delete GetRandom O(1)</span><span class="q-diff medium">Medium</span><span class="q-time">30 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/first-missing-positive" target="_blank"><span class="q-num">3</span><span class="q-name">First Missing Positive</span><span class="q-diff hard">Hard</span><span class="q-time">35 min</span><span class="arrow">↗</span></a>
-    </div>
-  </div>
-
-  <!-- MATH -->
-  <div class="topic-section">
-    <div class="topic-header"><span class="topic-icon">➗</span><span class="topic-name">Math</span><span class="topic-count">5</span></div>
-    <div class="questions-list">
-      <a class="question-row" href="https://leetcode.com/problems/roman-to-integer" target="_blank"><span class="q-num">1</span><span class="q-name">Roman to Integer</span><span class="q-diff easy">Easy</span><span class="q-time">20 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/random-pick-with-weight" target="_blank"><span class="q-num">2</span><span class="q-name">Random Pick with Weight</span><span class="q-diff medium">Medium</span><span class="q-time">30 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/powx-n" target="_blank"><span class="q-num">3</span><span class="q-name">Pow(x, n)</span><span class="q-diff medium">Medium</span><span class="q-time">25 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/reverse-integer" target="_blank"><span class="q-num">4</span><span class="q-name">Reverse Integer</span><span class="q-diff medium">Medium</span><span class="q-time">20 min</span><span class="arrow">↗</span></a>
-      <a class="question-row" href="https://leetcode.com/problems/palindrome-number" target="_blank"><span class="q-num">5</span><span class="q-name">Palindrome Number</span><span class="q-diff easy">Easy</span><span class="q-time">15 min</span><span class="arrow">↗</span></a>
-    </div>
-  </div>
-
-  <!-- QUEUE -->
-  <div class="topic-section">
-    <div class="topic-header"><span class="topic-icon">🚦</span><span class="topic-name">Queue</span><span class="topic-count">1</span></div>
-    <div class="questions-list">
-      <a class="question-row" href="https://leetcode.com/problems/design-hit-counter" target="_blank"><span class="q-num">1</span><span class="q-name">Design Hit Counter</span><span class="q-diff medium">Medium</span><span class="q-time">30 min</span><span class="arrow">↗</span></a>
-    </div>
-  </div>
-
-</div>
-
-<div class="footer">
-  ✅ Lifetime access · All questions from LeetCode · Source: Grind 169 by TechInterviewHandbook
-</div>
+  var rzp = new Razorpay(options);
+  rzp.open();
+}
+</script>
 
 </body>
 </html>
