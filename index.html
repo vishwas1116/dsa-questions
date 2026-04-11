@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>169 DSA Questions | Crack Any Interview</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a0f;
+    --bg2: #111118;
+    --bg3: #18181f;
+    --card: #1c1c25;
+    --border: rgba(255,255,255,0.07);
+    --border2: rgba(255,255,255,0.12);
+    --text: #f0f0f5;
+    --muted: #8888a0;
+    --accent: #7c6ff7;
+    --accent2: #a89cf7;
+    --easy: #22c55e;
+    --medium: #f59e0b;
+    --hard: #ef4444;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Space Grotesk', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background-image: radial-gradient(ellipse at 50% 0%, rgba(124,111,247,0.13) 0%, transparent 60%);
+  }
+
+  .card {
+    background: #13131a;
+    border: 1px solid rgba(124,111,247,0.2);
+    border-radius: 24px;
+    padding: 48px 40px;
+    max-width: 480px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 40px 80px rgba(0,0,0,0.5);
+  }
+
+  .top-badge {
+    display: inline-block;
+    background: rgba(124,111,247,0.12);
+    border: 1px solid rgba(124,111,247,0.25);
+    color: var(--accent2);
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 5px 14px; border-radius: 100px; margin-bottom: 24px;
+  }
+
+  h1 {
+    font-size: 32px; font-weight: 700; line-height: 1.2;
+    margin-bottom: 12px;
+    background: linear-gradient(135deg, #f0f0f5 0%, #a89cf7 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  }
+
+  .subtitle {
+    color: var(--muted); font-size: 15px; line-height: 1.6; margin-bottom: 32px;
+  }
+
+  .features {
+    text-align: left;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 20px 24px;
+    margin-bottom: 28px;
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .feat {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 13px; color: #c0c0d8;
+  }
+  .feat-icon {
+    width: 20px; height: 20px; border-radius: 50%;
+    background: rgba(34,197,94,0.15);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; flex-shrink: 0;
+    color: var(--easy);
+  }
+
+  .price-row {
+    display: flex; align-items: center; justify-content: center;
+    gap: 12px; margin-bottom: 20px;
+  }
+  .old-price { font-size: 18px; color: var(--muted); text-decoration: line-through; }
+  .new-price { font-size: 42px; font-weight: 700; color: var(--accent2); }
+  .discount-tag {
+    background: rgba(34,197,94,0.12); color: var(--easy);
+    border: 1px solid rgba(34,197,94,0.2);
+    font-size: 11px; font-weight: 600;
+    padding: 4px 10px; border-radius: 100px;
+  }
+
+  .pay-btn {
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+    width: 100%;
+    background: var(--accent);
+    color: white;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 16px; font-weight: 600;
+    padding: 16px 28px; border-radius: 14px; border: none;
+    cursor: pointer; text-decoration: none;
+    transition: all 0.2s;
+    margin-bottom: 14px;
+    letter-spacing: 0.2px;
+  }
+  .pay-btn:hover {
+    background: #6a5ef0;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(124,111,247,0.4);
+  }
+
+  .secure-note {
+    font-size: 12px; color: var(--muted);
+    display: flex; align-items: center; justify-content: center; gap: 6px;
+  }
+
+  .stats-row {
+    display: flex; gap: 0; margin: 28px 0 0;
+    border-top: 1px solid var(--border);
+    padding-top: 24px;
+  }
+  .stat { flex: 1; text-align: center; }
+  .stat:not(:last-child) { border-right: 1px solid var(--border); }
+  .stat-num { font-size: 22px; font-weight: 700; color: var(--accent2); }
+  .stat-label { font-size: 11px; color: var(--muted); margin-top: 3px; }
+
+  @media (max-width: 480px) {
+    .card { padding: 32px 20px; }
+    h1 { font-size: 26px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="card">
+  <div class="top-badge">🎯 Interview Prep 2025</div>
+
+  <h1>169 DSA Questions.<br>Every Company. One List.</h1>
+  <p class="subtitle">Hand-picked questions asked by Google, Amazon, Microsoft, Flipkart & more. Topic-wise organized. One-time payment.</p>
+
+  <div class="features">
+    <div class="feat"><div class="feat-icon">✓</div>169 hand-picked LeetCode questions</div>
+    <div class="feat"><div class="feat-icon">✓</div>Topic-wise: Array, Graph, DP, Trees & more</div>
+    <div class="feat"><div class="feat-icon">✓</div>Easy / Medium / Hard difficulty tags</div>
+    <div class="feat"><div class="feat-icon">✓</div>Direct LeetCode links — click & solve</div>
+    <div class="feat"><div class="feat-icon">✓</div>Covers Google, Amazon, Microsoft & more</div>
+    <div class="feat"><div class="feat-icon">✓</div>Lifetime access — one-time payment</div>
+  </div>
+
+  <div class="price-row">
+    <span class="old-price">₹199</span>
+    <span class="new-price">₹19</span>
+    <span class="discount-tag">90% OFF</span>
+  </div>
+
+  <!-- YAHAN APNA RAZORPAY LINK DAALO -->
+  <a class="pay-btn" href="https://rzp.io/rzp/oFiHBTae" target="_blank">
+    💳 &nbsp;Pay ₹19 & Get Instant Access
+  </a>
+
+  <p class="secure-note">🔒 Secured by Razorpay &nbsp;·&nbsp; Instant access after payment</p>
+
+  <div class="stats-row">
+    <div class="stat"><div class="stat-num">169</div><div class="stat-label">Questions</div></div>
+    <div class="stat"><div class="stat-num">18</div><div class="stat-label">Topics</div></div>
+    <div class="stat"><div class="stat-num">5+</div><div class="stat-label">Companies</div></div>
+    <div class="stat"><div class="stat-num">∞</div><div class="stat-label">Access</div></div>
+  </div>
+</div>
+
+</body>
+</html>
